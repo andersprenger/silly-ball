@@ -24,19 +24,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         setBoundariesPhysics()
         
-        var ballNode: SKShapeNode = SKShapeNode(circleOfRadius: 20)
+        self.scene?.backgroundColor = .black
+        
+        var ballNode: SKShapeNode = SKShapeNode(circleOfRadius: 40)
         ballNode.name = "node"
         ballNode.zPosition = 0
         ballNode.fillColor = .red
+        ballNode.strokeColor = .red
         ballNode.position = CGPoint(x: ((self.scene?.size.width)!) / 2, y: ((self.scene?.size.height)!) / 2)
-        ballNode.physicsBody = SKPhysicsBody(circleOfRadius: 20)
+        ballNode.physicsBody = SKPhysicsBody(circleOfRadius: 40)
         // node1.physicsBody?.isDynamic = false
         addChild(ballNode)
     }
     
     func setBoundariesPhysics() {
         // Sky creation
-        let sky = SKSpriteNode(color: .red, size: CGSize(width: (self.scene?.size.width)!, height: 1.0))
+        let sky = SKSpriteNode(color: .green, size: CGSize(width: (self.scene?.size.width)!, height: 10.0))
         sky.name = "Sky"
         sky.position = CGPoint(x: ((self.scene?.size.width)!) / 2, y: (self.scene?.size.height)!)
         sky.zPosition = 0
@@ -50,7 +53,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         // Floor creation
-        let floor = SKSpriteNode(color: .red, size: CGSize(width: (self.scene?.size.width)!, height: 10.0))
+        let floor = SKSpriteNode(color: .green, size: CGSize(width: (self.scene?.size.width)!, height: 10.0))
         floor.name = "Floor"
         floor.position = CGPoint(x: ((self.scene?.size.width)!) / 2, y: 0)
         floor.zPosition = 0
@@ -61,7 +64,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         floor.physicsBody = skyPhysicsBody
         
         // Left creation
-        let left = SKSpriteNode(color: .red, size: CGSize(width: 10.0, height: (self.scene?.size.height)!))
+        let left = SKSpriteNode(color: .green, size: CGSize(width: 10.0, height: (self.scene?.size.height)!))
         left.name = "aaaaa"
         left.position = CGPoint(x: 0, y: (self.scene?.size.height)! / 2)
         left.zPosition = 0
@@ -72,7 +75,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         left.physicsBody = leftPhysicsBody
 
         // Right creation
-        let right = SKSpriteNode(color: .red, size: CGSize(width: 10.0, height: (self.scene?.size.height)!))
+        let right = SKSpriteNode(color: .green, size: CGSize(width: 10.0, height: (self.scene?.size.height)!))
         right.name = "bbbbb"
         right.position = CGPoint(x: ((self.scene?.size.width)!), y: (self.scene?.size.height)! / 2)
         right.zPosition = 0
